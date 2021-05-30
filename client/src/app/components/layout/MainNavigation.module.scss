@@ -1,0 +1,47 @@
+.mainNavigation {
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: 6rem;
+        background-color: #0F0F0F;
+        height: 100%; /* Full height */
+        position: fixed; /* Make it stick, even on scroll */
+        overflow: auto; /* Enable scrolling if the sidenav has too much content */
+
+        .title {
+            color: #6703ff;
+            border-bottom: 1px solid #2e2e2e;
+            padding-top: 0.7rem;
+            padding-bottom: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .showsIcon {
+            border-bottom: 1px solid #2e2e2e;
+            padding-bottom: 2rem;
+        }
+
+        .personIcon {
+            padding-top: 2rem;
+        }
+
+        svg {
+            width: 2rem;
+            height: 100%;
+        }
+
+        li {
+            margin: 0 0.25rem;
+            padding: 1rem;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
