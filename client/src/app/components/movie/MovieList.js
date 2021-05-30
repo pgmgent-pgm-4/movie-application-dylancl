@@ -6,7 +6,6 @@ import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
 
 const API = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`;
 
-
 export const MovieList = ({ itemsPerPage = 4 }) => {
 	const [movies, setMovies] = useState();
 	const [loadMoreCounter, setLoadMoreCounter] = useState(0);
@@ -14,13 +13,12 @@ export const MovieList = ({ itemsPerPage = 4 }) => {
 	const fetchData = useCallback(async () => {
 		const response = await fetch(API);
 		const data = await response.json();
-		console.log(data);
 		setMovies(data.results.slice(loadMoreCounter, loadMoreCounter + 4));
 	}, [loadMoreCounter]) 
 	useEffect(() => {
 		fetchData();
 	}, [fetchData]);
-
+	console.log(movies);
 	return (
 		<section className={styles.movies}>
 			<div className={styles.movies__title}>

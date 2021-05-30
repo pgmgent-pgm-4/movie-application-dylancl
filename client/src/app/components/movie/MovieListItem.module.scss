@@ -52,13 +52,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        align-items: center;
+        margin-top: 1.3rem;
     }
 
     & .title {
         padding: 0 0 0 0.3rem;
-        margin: 0;
-
+        margin-bottom: 0.5rem;
+        max-width: 85%;
+        font-weight: 500;
         font-size: 1.1rem;
         a {
             text-decoration: none;

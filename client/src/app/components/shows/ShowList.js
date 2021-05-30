@@ -20,8 +20,8 @@ export const ShowList = ({ itemsPerPage = 4 }) => {
 				if (!response.ok) {
 					setError('There went something wrong, ara you sure the API link is right?');
 				}
-				const movies = await response.json();
-				setData(movies.results.slice(loadMoreCounter, loadMoreCounter + 4));
+				const shows = await response.json();
+				setData(shows.results.slice(loadMoreCounter, loadMoreCounter + 4));
 			} catch (err) {
 				setError(err)
 			} finally {
@@ -30,7 +30,7 @@ export const ShowList = ({ itemsPerPage = 4 }) => {
 		}
 		getData();
 	}, [loadMoreCounter]);
-
+	
 	return (
 		<section className={styles.shows}>
 			<div className={styles.shows__title}>

@@ -30,19 +30,40 @@
     }
 
     & .content {
+        margin-top: 1rem;
         display: flex;
         justify-content: space-between;
-        align-items: center;
     }
 
     & .title {
         padding: 0 0 0 0.3rem;
-        margin: 0;
-
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        max-width: 85%;
         font-size: 1.1rem;
         a {
             text-decoration: none;
             color: white;
+        }
+    }
+
+    .genres {
+        flex-basis: 100%;
+        list-style: none;
+        display: inline;
+        padding-top: 1rem;
+        padding: 0 0 0 0.3rem;
+        li {
+            display: inline;
+            color: #A4A4A4;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            &:after {
+                content: ", ";
+            }
+            &:last-child::after {
+                content: "";
+            }
         }
     }
 }
