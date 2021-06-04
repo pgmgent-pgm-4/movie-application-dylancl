@@ -10,13 +10,11 @@ import { MdMovie } from "react-icons/md";
 import styles from './MainNavigation.module.scss';
 
 const MainNavigation = () => {
-    const location = useLocation();
-    console.log(location);
     return (
         <nav className={styles.mainNavigation}>
             <ul>
                 <h1 className={styles.title}>{`{MovC}`}</h1>
-                <li>
+                <li className={styles.homeIcon}>
                     <NavLink activeStyle={{ color: '#6703ff' }} to={Routes.LANDING}><BsHouseFill /></NavLink>
                 </li>
                 <li>

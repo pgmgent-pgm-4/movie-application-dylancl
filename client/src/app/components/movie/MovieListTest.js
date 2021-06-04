@@ -5,40 +5,55 @@ import { IconContext } from 'react-icons';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
 import API from '../../services/dataService';
 
-export const MovieList = () => {
+export const MovieListTest = ({ itemsPerPage = 4 }) => {
  const [pagedMovies, setPagedMovies] = useState([]);
-	const [movies, setMovies] = useState();
-	const [loadMoreCounter, setLoadMoreCounter] = useState(0);
+ const [movies, setMovies] = useState(null);
+ const [loadMoreCounter, setLoadMoreCounter] = useState(0);
 
-	const fetchData = useCallback(async () => {
-		const response = await API.getPopular('movie');
-		const data = response.data;
-		setMovies(data.results);
-	}, []);
+ const fetchData = useCallback(async () => {
+  const response = await API.getPopular('movie');
+  const data = response.data;
+  console.log(data.results);
+  setMovies(data.results);
+ }, [])
 
-	useEffect(() => {
-		fetchData();
-	}, [fetchData]);
+ // const updateMoviesArray = () => {
+ //  console.log(movies);
+ //  if (movies) {
+ //   const moviesArray = [];
+ //   const size = 4;
+ //   for (let i = 0; i < movies.length; i += size) {
+ //    moviesArray.push(movies.slice(i, i + size))
+ //   }
+ //   setPagedMovies(pagedMovies => pagedMovies = moviesArray);
+ //  }
+ // };
+
+ useEffect(() => {
+  fetchData();
+ }, [fetchData]);
 
  useEffect(() => {
   const makeMovieArray = () => {
+   console.log(movies);
    if (movies) {
+    console.log(movies);
     const moviesArray = [];
     const size = 4;
     for (let i = 0; i < movies.length; i += size) {
      moviesArray.push(movies.slice(i, i + size))
     }
+ 
     setPagedMovies(moviesArray);
    }
   };
-
   makeMovieArray();
  }, [movies]);
 
  const handleMoviesOnClick = () => {
   setLoadMoreCounter(prev => {
    if (prev === pagedMovies.length - 1) {
-    console.log(prev);
+    console.log(prev); 
     return 0;
    } else {
     return prev + 1;
@@ -46,7 +61,8 @@ export const MovieList = () => {
   });
  };
 
-	return (
+
+ return (
   <section className={styles.movies}>
    <div className={styles.movies__title}>
     <h3>Movies</h3>
@@ -67,3 +83,4 @@ export const MovieList = () => {
   </section>
  )
 }
+

@@ -7,26 +7,35 @@
         margin: 0;
         padding: 0;
         width: 6rem;
-        background-color: #0F0F0F;
-        height: 100%; /* Full height */
-        position: fixed; /* Make it stick, even on scroll */
-        overflow: auto; /* Enable scrolling if the sidenav has too much content */
+        background-color: var(--background-color);
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+
+        li svg:hover {
+         color: #6703ff;
+        }
 
         .title {
             color: #6703ff;
             border-bottom: 1px solid #2e2e2e;
-            padding-top: 0.7rem;
-            padding-bottom: 2rem;
+            padding-top: 1.9rem;
+            padding-bottom: 1.8rem;
             font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .homeIcon {
+         padding-top: 3rem;
         }
 
         .showsIcon {
             border-bottom: 1px solid #2e2e2e;
-            padding-bottom: 2rem;
+            padding-bottom: 3rem;
         }
 
         .personIcon {
-            padding-top: 2rem;
+            padding-top: 3rem;
         }
 
         svg {
@@ -39,7 +48,7 @@
             padding: 1rem;
 
             a {
-                color: #fff;
+                color: var(--text-color);
                 text-decoration: none;
             }
         }
