@@ -13,7 +13,6 @@ export const ShowList = ({ itemsPerPage = 4 }) => {
  const fetchData = useCallback(async () => {
   const response = await API.getPopular('tv');
   const data = response.data;
-  console.log(data.results);
   setShows(data.results);
  }, []);
 

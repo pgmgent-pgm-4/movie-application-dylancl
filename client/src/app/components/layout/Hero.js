@@ -8,7 +8,6 @@ const Hero = () => {
 	const fetchData = useCallback(async () => {
   const response = await API.getRandomMovie();
   const data = response;
-  console.log(response);
 		setMovie(data);
 	}, []) 
  
