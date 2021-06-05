@@ -7,8 +7,8 @@ const getRandomInt = (min, max) => {
 }
 
 const API = {
- getPopular: async (query) => {
-  const url = `https://api.themoviedb.org/3/${query}/popular?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`;
+ getList: async (query, method) => {
+  const url = `https://api.themoviedb.org/3/${query}/${method}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`;
   try {
    const response = await axios.get(url);
    return response;
@@ -46,18 +46,18 @@ const API = {
  },
  getMovieTrailers: async () => {
   const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`;
+  let trailers = [];
   try {
    const response = await axios.get(url);
    const results = response.data.results.slice(0, 10).map((element) => {
-    return element.id
+    return element.id;
    });
-   let trailers = [];
-   results.forEach(async (element) => {
-    const url = `https://api.themoviedb.org/3/movie/${element}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&append_to_response=videos`;
+   for (const item in results) {
+    const url = `https://api.themoviedb.org/3/movie/${results[item]}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&append_to_response=videos`;
     const trailerResponse = await axios.get(url);
     const trailerResult = trailerResponse.data;
     trailers.push(trailerResult);
-   });
+   };
    return trailers;
   } catch (error) {
    console.log(error);

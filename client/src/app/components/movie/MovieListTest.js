@@ -11,7 +11,7 @@ export const MovieListTest = ({ itemsPerPage = 4 }) => {
  const [loadMoreCounter, setLoadMoreCounter] = useState(0);
 
  const fetchData = useCallback(async () => {
-  const response = await API.getPopular('movie');
+  const response = await API.getList('movie', 'popular');
   const data = response.data;
   console.log(data.results);
   setMovies(data.results);

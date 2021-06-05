@@ -5,13 +5,13 @@ import { IconContext } from 'react-icons';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
 import API from '../../services/dataService';
 
-export const ShowList = ({ itemsPerPage = 4 }) => {
+export const ShowList = (props) => {
  const [pagedShows, setPagedShows] = useState([]);
  const [shows, setShows] = useState();
  const [loadMoreCounter, setLoadMoreCounter] = useState(0);
 
  const fetchData = useCallback(async () => {
-  const response = await API.getPopular('tv');
+  const response = await API.getList('tv', props.query);
   const data = response.data;
   setShows(data.results);
  }, []);
@@ -61,7 +61,7 @@ export const ShowList = ({ itemsPerPage = 4 }) => {
     {pagedShows[loadMoreCounter] && pagedShows[loadMoreCounter].map(show => {
      return (
       <MovieListItem key={show.id} show={show} />
-     )
+     );
     })}
    </div>
   </section>

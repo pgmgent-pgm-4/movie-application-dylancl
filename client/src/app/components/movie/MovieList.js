@@ -5,13 +5,13 @@ import { IconContext } from 'react-icons';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
 import API from '../../services/dataService';
 
-export const MovieList = () => {
+export const MovieList = (props) => {
  const [pagedMovies, setPagedMovies] = useState([]);
 	const [movies, setMovies] = useState();
 	const [loadMoreCounter, setLoadMoreCounter] = useState(0);
 
 	const fetchData = useCallback(async () => {
-		const response = await API.getPopular('movie');
+		const response = await API.getList('movie', props.query);
 		const data = response.data;
 		setMovies(data.results);
 	}, []);
