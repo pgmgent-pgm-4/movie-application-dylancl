@@ -6,7 +6,7 @@ export const MovieFeed = ({ movies }) => {
   <section className={styles.MovieFeed}>
    {movies && movies.map(movie => {
     return (
-     <MovieFeedCard movie={movie}></MovieFeedCard>
+     <MovieFeedCard key={movie.id} movie={movie}></MovieFeedCard>
     )
    })}
   </section>

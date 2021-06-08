@@ -23,8 +23,6 @@ const MoviesPage = () => {
   fetchData();
  }, [sort, page])
 
- let currentPage = page;
-
  const options = [
   { value: 'popular', label: 'Popular' },
   { value: 'upcoming', label: 'Upcoming' },
@@ -41,12 +39,29 @@ const MoviesPage = () => {
   setPage(selectedPage)
  }
 
+ const selectStyles = {
+  option: (styles, { isFocused, isSelected }) => {
+   const color = '#6703ff';
+   return {
+    ...styles,
+    backgroundColor: isSelected
+     ? color
+     : isFocused
+      ? 'rgb(103 3 255 / 50%)'
+      : null,
+    color: isSelected
+     ? 'white'
+     : 'black',
+   };
+  },
+ }
+
  return (
   <BaseLayout>
    <Container>
     <div className={styles.title__wrapper}>
      <h1 className={styles.title}>Movies</h1>
-     <Select className={styles.dropdown} onChange={handleSortChange} value={options.value} defaultValue={options[0]} options={options} />
+     <Select styles={selectStyles} classNamePrefix={'dropdown'} className={styles.dropdown} onChange={handleSortChange} value={options.value} defaultValue={options[0]} options={options} />
     </div>
     {movies && <MovieFeed movies={movies}></MovieFeed>}
     <div className={styles.pagination__wrapper}>
