@@ -172,6 +172,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input,
+button {
+ font-family: Inter, Roboto, sans-serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
