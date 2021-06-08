@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 
 import * as Routes from './routes';
-
 import styles from './App.module.scss';
-import { HomePage, SignInPage } from './pages';
+import { HomePage, SignInPage, MoviePage, MoviesPage } from './pages';
 import { ThemeContext } from './lib/context'
 
 function App() {
@@ -18,10 +17,12 @@ function App() {
     <FirebaseProvider>
      <AuthProvider>
       <FirestoreProvider>
-       <Router basename={'movie-collection'}>
+       <Router basename={'/movie-collection'}>
         <Switch>
          <Route exact path={Routes.LANDING} component={HomePage} />
-         <Route from={Routes.HOME} to={Routes.LANDING} />
+         <Route exact path={Routes.HOME} component={HomePage} />
+         <Route exact path={Routes.MOVIES} component={MoviesPage} />
+         <Route exact path={Routes.MOVIE_DETAILS} component={MoviePage} />
          <Route exact path={Routes.AUTH_SIGN_IN} component={SignInPage} />
         </Switch>
        </Router>

@@ -1,6 +1,6 @@
 .hero {
  height: 50vh;
- background-position: 100% 0%;
+ background-position: 0% 0%;
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
@@ -8,42 +8,48 @@
  padding-top: 5rem;
  .content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 2rem 1rem 2rem;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  padding: 0 2rem 0 2rem;
+  margin-left: auto;
+  height: 100%;
+  padding-top: 30rem;
   color: white;
   align-self: flex-end;
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(5px);
 
   .title {
-   font-size: min(max(1rem, 4vw), 2.2rem);
+   font-size: min(max(1rem, 4vw), 3rem);
    font-weight: 600;
-   max-width: 20rem;
+   padding-bottom: 1rem;
   }
 
   .genres {
-   display: inline;
    list-style: none;
-   margin: 0 0 0 0.3rem;
+   margin-bottom: 2rem;
    li {
     display: inline;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    border: 3px solid #6703ff;
+    border-radius: 5rem;
+    margin-right: 0.5rem;
+   }
 
-    &:after {
-     content: ", ";
-    }
+   &:after {
+    content: ", ";
+   }
 
-    &:last-child::after {
-     content: "";
-    }
+   &:last-child::after {
+    content: "";
    }
   }
 
   .description {
    font-size: 1.1rem;
-   width: 50%;
-   text-align: center;
+   width: 100%;
+   padding-bottom: 2rem;
   }
 
   .buttonContainer {
@@ -72,5 +78,25 @@
     }
    }
   }
+ }
+}
+
+.cast {
+ margin-top: 2rem;
+
+ &__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #707070;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  color: var(--text-color);
+  font-size: 1.3rem;
+}
+
+ &__list {
+  display: flex;
+  justify-content: space-between;
  }
 }

@@ -15,6 +15,9 @@ const HomePage = () => {
         <MovieList query='popular' />
         <ShowList  query='popular' />
         <TrailerList />
+        <h2 className={styles.title}>Trending movies and TV shows</h2>
+        <MovieList query='trending' />
+        <ShowList  query='trending' />
       </Container>
     </BaseLayout>
 

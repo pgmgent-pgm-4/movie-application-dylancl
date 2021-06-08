@@ -12,8 +12,7 @@ export const ShowList = (props) => {
 
  const fetchData = useCallback(async () => {
   const response = await API.getList('tv', props.query);
-  const data = response.data;
-  setShows(data.results);
+  setShows(response);
  }, []);
 
  useEffect(() => {

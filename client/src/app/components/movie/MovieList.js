@@ -12,8 +12,8 @@ export const MovieList = (props) => {
 
 	const fetchData = useCallback(async () => {
 		const response = await API.getList('movie', props.query);
-		const data = response.data;
-		setMovies(data.results);
+  console.log(response);
+		setMovies(response);
 	}, []);
 
 	useEffect(() => {

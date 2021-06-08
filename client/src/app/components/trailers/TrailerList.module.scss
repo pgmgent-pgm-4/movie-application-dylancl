@@ -2,11 +2,11 @@
 .TrailerList {
  margin-top: 2rem;
  background-color: var(--background-color-trailer);
- padding: 1.5rem;
+ padding: 1.5rem 0 0 1.5rem;
 
  .list {
-  display: flex;
- }
+  display: flex
+  }
 
  .title {
   margin-bottom: 1rem;

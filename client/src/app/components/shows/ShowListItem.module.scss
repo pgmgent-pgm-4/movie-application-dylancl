@@ -2,6 +2,12 @@
     overflow: hidden;
     color: var(--text-color);
     flex: 1 0 0;
+
+    a {
+     text-decoration: none;
+     color: white;
+    }
+
     &:not(:last-child) {
         margin-right: 1rem;
     }

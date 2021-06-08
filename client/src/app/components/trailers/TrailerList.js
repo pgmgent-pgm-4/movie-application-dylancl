@@ -1,8 +1,10 @@
 import { useState, useCallback, useEffect } from "react";
-import TrailerListItem from './TrailerListItem'
-import styles from './TrailerList.module.scss';
+import TrailerListItem from './TrailerListItem';
+import 'simplebar/dist/simplebar.min.css';
 import API from "../../services/dataService";
-import { Scrollbars } from 'react-custom-scrollbars-2';
+import SimpleBar from 'simplebar-react';
+import styles from './TrailerList.module.scss';
+
 
 
 export const TrailerList = () => {
@@ -21,7 +23,7 @@ export const TrailerList = () => {
  return (
   <section className={styles.TrailerList}>
    <h2 className={styles.title}>Latest trailers</h2>
-   <Scrollbars style={{ width: '100%', height: '20rem'}}>
+   <SimpleBar className={styles.test} style={{ height: '21rem'}}>
    <div className={styles.list}>
    {trailers && trailers.map((trailer) => {
     return (
@@ -29,7 +31,7 @@ export const TrailerList = () => {
     );
    })}
   </div>
-  </Scrollbars>
+  </SimpleBar>
   </section>
  )
 }

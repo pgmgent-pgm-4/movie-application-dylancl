@@ -1,0 +1,24 @@
+.card {
+ background-color: var(--background-color-trailer);
+ width: 13rem;
+ min-height: 19.5rem;
+
+ &__image {
+  width: 100%;
+  min-height: 20rem;
+ }
+
+ &__content {
+  padding: 0.5rem;
+  color: var(--text-color)
+ }
+
+ &__name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+ }
+
+ &__character {
+  color: #A4A4A4;
+ }
+}

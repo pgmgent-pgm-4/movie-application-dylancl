@@ -7,11 +7,14 @@ const getRandomInt = (min, max) => {
 }
 
 const API = {
- getList: async (query, method) => {
-  const url = `https://api.themoviedb.org/3/${query}/${method}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`;
+ getList: async (query, method, page = 1) => {
+  let url = `https://api.themoviedb.org/3/${query}/${method}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=${page}`;
+  if (method === 'trending') {
+   url = `https://api.themoviedb.org/3/${method}/${query}/week?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=${page}`;
+  }
   try {
    const response = await axios.get(url);
-   return response;
+   return response.data.results;
   } catch (error) {
    console.log(error);
   }
@@ -20,7 +23,7 @@ const API = {
   const url = `https://api.themoviedb.org/3/genre/${query}/list?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`;
   try {
    const response = await axios.get(url);
-   return response;
+   return response.data;
   } catch (error) {
    console.log(error);
   }
@@ -29,7 +32,7 @@ const API = {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`;
   try {
    const response = await axios.get(url);
-   return response;
+   return response.data;
   } catch (error) {
    console.log(error);
   }
@@ -59,6 +62,15 @@ const API = {
     trailers.push(trailerResult);
    };
    return trailers;
+  } catch (error) {
+   console.log(error);
+  }
+ },
+ getCast: async (query, id) => {
+  const url = `https://api.themoviedb.org/3/${query}/${id}/credits?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&append_to_response=videos`;
+  try {
+   const response = await axios.get(url);
+   return response.data;
   } catch (error) {
    console.log(error);
   }
