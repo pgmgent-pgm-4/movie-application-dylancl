@@ -20,7 +20,7 @@
         "babel-preset-airbnb": "^5.0.0"
     },
     "scripts": {
-        "seeder:projects": "babel-node projects-seeder.js --debug --presets airbnb",
+        "seeder:movies": "babel-node movies-seeder.js --debug --presets airbnb",
         "seeder:project-reviews": "babel-node project-reviews-seeder.js --debug --presets airbnb",
         "seeder:project-views": "babel-node project-views-seeder.js --debug --presets airbnb",
         "seeder:users": "babel-node users-seeder.js --debug --presets airbnb",
