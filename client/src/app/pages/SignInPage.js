@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from '../contexts/firebase/auth.context';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './SignInPage.module.scss';
-import { auth } from '../../../../admin/node_modules/firebase';
-
 const SignInPage = ({ children }) => {
  const history = useHistory();
  const [signInForm, setSignInForm] = useState({

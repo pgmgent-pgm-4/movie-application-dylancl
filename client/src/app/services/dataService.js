@@ -12,6 +12,8 @@ const API = {
   if (method === 'trending') {
    url = `https://api.themoviedb.org/3/${method}/${query}/week?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=${page}`;
   }
+
+  console.log(url);
   try {
    const response = await axios.get(url);
    return response.data.results;
@@ -68,6 +70,7 @@ const API = {
  },
  getCast: async (query, id) => {
   const url = `https://api.themoviedb.org/3/${query}/${id}/credits?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&append_to_response=videos`;
+  console.log(url);
   try {
    const response = await axios.get(url);
    return response.data;
