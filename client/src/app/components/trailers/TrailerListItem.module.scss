@@ -1,0 +1,43 @@
+.TrailerListItem {
+ margin-right: 2rem;
+ 
+ .pictureWrapper {
+  cursor: pointer;
+  .picture {
+   height: 14rem;
+   width: 30rem;
+   background-size: cover;
+   background-repeat: no-repeat;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   svg {
+    width: 5rem;
+    height: 100%;
+    color: white;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+
+   }
+  }
+ }
+
+ .content {
+  text-align: center;
+  margin-top: 1rem;
+  .title {
+   margin-bottom: 0.5rem;
+   font-weight: 500;
+   font-size: 1.1rem;
+   a {
+    text-decoration: none;
+    color: var(--text-color);
+   }
+  }
+
+  .name {
+   color: #A4A4A4;
+  }
+ }
+}
+

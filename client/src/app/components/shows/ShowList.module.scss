@@ -1,0 +1,28 @@
+.shows {
+    margin-top: 2rem;
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #707070;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        font-size: 1.3rem;
+        color: var(--text-color);
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}

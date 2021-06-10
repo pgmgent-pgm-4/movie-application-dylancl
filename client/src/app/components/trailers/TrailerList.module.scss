@@ -1,0 +1,17 @@
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+.TrailerList {
+ margin-top: 2rem;
+ background-color: var(--background-color-trailer);
+ padding: 1.5rem 0 0 1.5rem;
+
+ .list {
+  display: flex
+  }
+
+ .title {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--text-color);
+ }
+}
