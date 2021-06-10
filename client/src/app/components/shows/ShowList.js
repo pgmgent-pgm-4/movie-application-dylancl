@@ -13,7 +13,7 @@ export const ShowList = (props) => {
  const fetchData = useCallback(async () => {
   const response = await API.getList('tv', props.query);
   setShows(response);
- }, []);
+ }, [props.query]);
 
  useEffect(() => {
   fetchData();
