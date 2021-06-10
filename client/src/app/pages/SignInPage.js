@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useAuth } from '../contexts/firebase/auth.context';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './SignInPage.module.scss';
+import { auth } from '../../../../admin/node_modules/firebase';
 
 const SignInPage = ({ children }) => {
  const history = useHistory();
@@ -9,15 +11,28 @@ const SignInPage = ({ children }) => {
   txtEmail: '',
   txtPassword: ''
  });
- const { currentUser, signInWithEmailAndPassword, signOut } = useAuth();
+ const { currentUser, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } = useAuth();
 
  const handleSubmit = async (ev) => {
   ev.preventDefault();
 
-  const result = await signInWithEmailAndPassword(signInForm.txtEmail, signInForm.txtPassword);
+  let result = await signInWithEmailAndPassword(signInForm.txtEmail, signInForm.txtPassword);
   if (result) {
    history.goBack();
+  } else { // No user found, create account.
+   result = await handleRegistration(signInForm.txtEmail, signInForm.txtPassword);
+   result && history.goBack();
   }
+ }
+
+ const handleRegistration = async(email, password) => {
+  const photoURL = `https://robohash.org/${uuidv4()}?gravatar=hashed`;
+  const username = email.split('@')[0];
+  const data = {
+   username,
+   photoURL,
+  };
+  return await createUserWithEmailAndPassword(email, password, data);
  }
 
  const handleInputChange = async (ev) => {
