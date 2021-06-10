@@ -15,7 +15,7 @@ export const MovieDetails = ({ movie }) => {
   const response = await API.getCast('movie', movie.id);
   const data = response;
   setCast(data.cast);
- }, []);
+ }, [movie.id]);
 
 
  useEffect(() => {

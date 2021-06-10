@@ -14,7 +14,7 @@ export const MovieList = (props) => {
 		const response = await API.getList('movie', props.query);
   console.log(response);
 		setMovies(response);
-	}, []);
+	}, [props.query]);
 
 	useEffect(() => {
 		fetchData();
