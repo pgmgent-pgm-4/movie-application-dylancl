@@ -53,5 +53,6 @@ jobs:
         with:
           args: deploy --only hosting
         env:
+          CI: false
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_PATH: './client'
