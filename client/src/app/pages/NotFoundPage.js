@@ -11,7 +11,7 @@ const NotFoundPage = () => {
     <main className={styles.fullContainer}>
       <div className={styles.fof}>
         <div className={styles.callToActions}>
-          <button onClick={() => history.push(Routes.LANDING, { from: "NotFoundPage" })}>Home</button>
+          <button onClick={() => history.push(Routes.HOME, { from: "NotFoundPage" })}>Home</button>
           <button onClick={() => history.goBack() }>Back</button>
         </div>
       </div>

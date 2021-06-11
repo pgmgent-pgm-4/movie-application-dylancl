@@ -14,7 +14,7 @@ const MainNavigation = () => {
    <ul>
     <h1 className={styles.title}>{`{MovC}`}</h1>
     <li className={styles.homeIcon}>
-     <NavLink activeStyle={{ color: '#6703ff' }} to={Routes.HOME}><BsHouseFill /></NavLink>
+     <NavLink activeStyle={{ color: '#6703ff' }} exact to={Routes.HOME}><BsHouseFill /></NavLink>
     </li>
     <li>
      <NavLink activeStyle={{ color: '#6703ff' }} to={Routes.MOVIES}><MdMovie /></NavLink>

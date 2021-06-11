@@ -52,9 +52,9 @@
     font-size: 1.2rem;
     padding: 0.7rem 1rem 0.7rem 1rem;
     border-radius: 5rem;
-    background-color: #6703ff;
+    background-color: var(--main-color);
     margin-right: 2rem;
-    border: 3px solid #6703ff;
+    border: 3px solid var(--main-color);
 
     &:hover {
      background-color: transparent;
@@ -64,11 +64,11 @@
    .buttonTrailer {
     font-size: 1.2rem;
     padding: 0.7rem 1rem 0.7rem 1rem;
-    border: 3px solid #6703ff;
+    border: 3px solid var(--main-color);
     border-radius: 5rem;
 
     &:hover {
-     background-color: #6703ff;
+     background-color: var(--main-color);
     }
    }
   }

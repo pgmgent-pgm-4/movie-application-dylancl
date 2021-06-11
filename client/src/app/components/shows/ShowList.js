@@ -37,7 +37,6 @@ export const ShowList = (props) => {
  const handleshowsOnClick = () => {
   setLoadMoreCounter(prev => {
    if (prev === pagedShows.length - 1) {
-    console.log(prev);
     return 0;
    } else {
     return prev + 1;
