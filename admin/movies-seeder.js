@@ -1,8 +1,5 @@
 import fetch from 'node-fetch';
-import { v4 as uuidv4 } from 'uuid';
-
 import { admin, app, db, generateTimestamps } from './firebase';
-import firebase from 'firebase';
 
 const MOVIES_API = 'https://api.themoviedb.org/3/movie/popular?api_key=4ee2cdfcc72d40e3d831d4cc8ef4abf3';
 
