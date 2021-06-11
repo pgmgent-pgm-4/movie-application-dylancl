@@ -21,7 +21,7 @@
     },
     "scripts": {
         "seeder:movies": "babel-node movies-seeder.js --debug --presets airbnb",
-        "seeder:project-reviews": "babel-node project-reviews-seeder.js --debug --presets airbnb",
+        "seeder:movie-reviews": "babel-node movie-reviews-seeder.js --debug --presets airbnb",
         "seeder:project-views": "babel-node project-views-seeder.js --debug --presets airbnb",
         "seeder:users": "babel-node users-seeder.js --debug --presets airbnb",
         "delete:projects": "babel-node collection-delete.js projects 50 --debug --presets airbnb",
