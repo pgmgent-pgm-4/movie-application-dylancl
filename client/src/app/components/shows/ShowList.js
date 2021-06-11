@@ -10,7 +10,7 @@ export const ShowList = ({ query }) => {
  const [pagedShows, setPagedShows] = useState([]);
  const [loadMoreCounter, setLoadMoreCounter] = useState(0);
 
- const [shows, error, isLoading] = useFetch(query);
+ const [shows, error, isLoading] = useFetch(query, true);
 
  useEffect(() => {
   const makeShowsArray = () => {
