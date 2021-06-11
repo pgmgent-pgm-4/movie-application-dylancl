@@ -1,32 +1,26 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { MovieDetails } from "../components/movie/MovieDetails";
-import API from "../services/dataService";
+import useFetch from "../hooks/fetch";
 import { BaseLayout, Container } from '../layouts';
+import { Spinner } from "../components/layout/Spinner";
 import { MovieReviewList } from '../components/movie/MovieReviewList';
 
 const MoviePage = () => {
-  const { id } = useParams();
-  const [ movie, setMovie ] = useState();
+ const { id } = useParams();
+ const [movie, error, isLoading] = useFetch(`movie/${id}`, false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await API.getMovieById(id);
-      setMovie(data);
-    };
-
-    fetchData();    
-  }, [id])
-
-  return (
-    <BaseLayout>
-      <Container>
-       <p>{id}</p>
-      {movie && <MovieDetails movie={movie} /> }
-      {movie && <MovieReviewList movieId={id} /> }
-      </Container>
-    </BaseLayout>
-  );
+ return (
+  <>
+   {error ? error :
+    isLoading || !movie ? <Spinner /> :
+      <BaseLayout>
+       <Container>
+       {movie && <MovieDetails movie={movie} /> }
+       {movie && <MovieReviewList movieId={id} /> }
+       </Container>
+     </BaseLayout>}
+  </>
+ );
 };
 
 export default MoviePage;

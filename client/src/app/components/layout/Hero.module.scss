@@ -1,11 +1,19 @@
+@import '../../../scss/mixins/mediaqueries';
+
 .hero {
  height: 50vh;
+ background: var(--main-color);
  background-position: 100% 0%;
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
  display: flex;
  padding-top: 5rem;
+
+ @include lt-lg {
+  padding-top: 7rem;
+ }
+
  .content {
   display: flex;
   justify-content: space-between;
@@ -17,26 +25,19 @@
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(5px);
 
-  .title {
-   font-size: min(max(1rem, 4vw), 2.2rem);
-   font-weight: 600;
-   max-width: 20rem;
+  @include lt-lg {
+   height: 100%;
+   flex-direction: column;
+   justify-content: space-around;
   }
 
-  .genres {
-   display: inline;
-   list-style: none;
-   margin: 0 0 0 0.3rem;
-   li {
-    display: inline;
+  .title {
+   font-size: min(max(1rem, 5vw), 2.2rem);
+   font-weight: 600;
+   max-width: 20rem;
 
-    &:after {
-     content: ", ";
-    }
-
-    &:last-child::after {
-     content: "";
-    }
+   @include lt-lg {
+    max-width: unset;
    }
   }
 
@@ -44,10 +45,22 @@
    font-size: 1.1rem;
    width: 50%;
    text-align: center;
+
+   @include lt-lg {
+    width: 100%;
+   }
   }
 
   .buttonContainer {
    font-weight: 500;
+
+   @include lt-lg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
    .buttonLearn {
     font-size: 1.2rem;
     padding: 0.7rem 1rem 0.7rem 1rem;
@@ -55,6 +68,11 @@
     background-color: var(--main-color);
     margin-right: 2rem;
     border: 3px solid var(--main-color);
+
+    @include lt-lg {
+     margin-right: 0;
+     margin-bottom: 1rem;
+    }
 
     &:hover {
      background-color: transparent;

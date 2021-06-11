@@ -1,25 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useCallback } from 'react';
-import API from '../../services/dataService';
-import * as Routes from '../../routes';
 import styles from './MovieListItem.module.scss';
 
 
-const MovieListItem = ({ movie }) => {
+export const MovieListItem = ({ movie }) => {
  const [genres, setGenres] = useState();
 
- const fetchData = useCallback(async () => {
-  const response = await API.getGenreList('movie');
-  setGenres(response.genres);
- }, []);
-
- useEffect(() => {
-  fetchData();
- }, [fetchData]);
+ setGenres([]);
 
  return (
   <article className={styles.movieListItem}>
-   <Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>
+   <Link to={'/TEST'.replace(':id', movie.id)}>
     <picture className={styles.picture}>
      <img src={'https://image.tmdb.org/t/p/original/' + movie.backdrop_path} alt={movie.original_title} />
     </picture>
@@ -35,5 +26,3 @@ const MovieListItem = ({ movie }) => {
   </article>
  )
 };
-
-export default MovieListItem;

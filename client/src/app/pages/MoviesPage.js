@@ -1,27 +1,18 @@
-import API from "../services/dataService";
+import useFetch from '../hooks/fetch';
 import { BaseLayout, Container } from '../layouts';
 import { MovieFeed } from '../components/moviefeed/MovieFeed';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Select from 'react-select';
 import Pagination from 'rc-pagination';
 import '../components/general/Pagination.css'
 import styles from './MoviesPage.module.scss'
+import { Spinner } from '../components/layout/Spinner';
 
 const MoviesPage = () => {
- const [movies, setMovies] = useState();
- const [isLoading, setIsLoading] = useState(true);
  const [page, setPage] = useState(1);
  const [sort, setSort] = useState('popular');
 
- useEffect(() => {
-  const fetchData = async () => {
-   const data = await API.getList('movie', sort, page);
-   setMovies(data);
-   setIsLoading(false);
-  };
-
-  fetchData();
- }, [sort, page])
+ const [movies, error, isLoading] = useFetch(`movie/${sort}`, true, page);
 
  const options = [
   { value: 'popular', label: 'Popular' },
@@ -58,7 +49,8 @@ const MoviesPage = () => {
 
  return (
   <>
-   {isLoading ? 'loading' : 
+   {error ? error :
+    isLoading || !movies ? <Spinner /> :
    <BaseLayout>
     <Container>
      <div className={styles.title__wrapper}>

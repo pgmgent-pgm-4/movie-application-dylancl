@@ -9,7 +9,7 @@ export const MovieFeedCard = ({ movie }) => {
  const percentage = movie.vote_average * 10;
 
  return (
-  <Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>
+  <Link className={styles.card}  to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>
    <div className={styles.card}>
     <img className={styles.card__image} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
      <div styles={{ width: '3rem', height: '3rem' }}>

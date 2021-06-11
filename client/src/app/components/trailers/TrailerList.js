@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect } from "react";
 import TrailerListItem from './TrailerListItem';
-import 'simplebar/dist/simplebar.min.css';
 import API from "../../services/dataService";
 import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 import styles from './TrailerList.module.scss';
 
 

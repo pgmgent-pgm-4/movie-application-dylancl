@@ -1,3 +1,6 @@
+@import '../../../scss/mixins/mediaqueries';
+
+
 .shows {
     margin-top: 2rem;
     &__title {
@@ -14,6 +17,10 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
+
+        @include lt-md {
+         display: block;
+        }
     }
 }
 
