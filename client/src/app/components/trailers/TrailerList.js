@@ -23,7 +23,7 @@ export const TrailerList = () => {
  return (
   <section className={styles.TrailerList}>
    <h2 className={styles.title}>Latest trailers</h2>
-   <SimpleBar className={styles.test} style={{ height: '21rem'}}>
+   <SimpleBar style={{ height: '21rem'}}>
    <div className={styles.list}>
    {trailers && trailers.map((trailer) => {
     return (

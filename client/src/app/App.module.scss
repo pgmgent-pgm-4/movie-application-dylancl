@@ -3,13 +3,20 @@
  --background-color: rgb(243, 243, 243);
  --background-color-sec: #f7f8fc;
  --background-color-trailer: #dbdbdb;
+ --scrollbar-color: #111;
  --box-shadow: 0 0 #000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(38 137 251 / 15%);
 }
 
 [data-theme="dark"]{
  --text-color: #fcfcfc;
+ --scrollbar-color: #fcfcfc;
  --background-color: #111;
  --background-color-sec: #0e0e0e;
  --background-color-trailer: #232222;
  --box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+:root {
+ --main-color: #6703ff;
+ --darken-color: #A4A4A4;
 }

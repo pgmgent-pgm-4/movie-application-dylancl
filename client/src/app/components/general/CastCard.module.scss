@@ -1,5 +1,4 @@
 .card {
- background-color: var(--background-color-trailer);
  width: 13rem;
  min-height: 19.5rem;
 
@@ -19,6 +18,6 @@
  }
 
  &__character {
-  color: #A4A4A4;
+  color: var(--darken-color);
  }
 }

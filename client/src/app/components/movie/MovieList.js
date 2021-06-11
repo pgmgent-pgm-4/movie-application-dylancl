@@ -4,21 +4,15 @@ import styles from './MovieList.module.scss';
 import { IconContext } from 'react-icons';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
 import API from '../../services/dataService';
+import useFetch from '../../hooks/fetch';
+import { Spinner } from './../layout/Spinner';
 
-export const MovieList = (props) => {
+export const MovieList = ({query}) => {
  const [pagedMovies, setPagedMovies] = useState([]);
-	const [movies, setMovies] = useState();
 	const [loadMoreCounter, setLoadMoreCounter] = useState(0);
 
-	const fetchData = useCallback(async () => {
-		const response = await API.getList('movie', props.query);
-  console.log(response);
-		setMovies(response);
-	}, [props.query]);
-
-	useEffect(() => {
-		fetchData();
-	}, [fetchData]);
+ const [movies, error, isLoading] = useFetch(query);
+ 
 
  useEffect(() => {
   const makeMovieArray = () => {
@@ -47,23 +41,27 @@ export const MovieList = (props) => {
  };
 
 	return (
-  <section className={styles.movies}>
-   <div className={styles.movies__title}>
-    <h3>Movies</h3>
-    <div>
-     <IconContext.Provider value={{ color: "white", verticalAlign: 'middle', className: 'chevron' }}>
-      {pagedMovies && <button onClick={handleMoviesOnClick}><BsChevronLeft /></button>}
-      {pagedMovies && <button onClick={handleMoviesOnClick}><BsChevronRight /></button>}
-     </IconContext.Provider>
+  <>
+  {error ? 'error' : 
+  isLoading || !movies ? <Spinner /> : 
+   <section className={styles.movies}>
+    <div className={styles.movies__title}>
+     <h3>Movies</h3>
+     <div>
+      <IconContext.Provider value={{ color: "white", verticalAlign: 'middle', className: 'chevron' }}>
+       {pagedMovies && <button onClick={handleMoviesOnClick}><BsChevronLeft /></button>}
+       {pagedMovies && <button onClick={handleMoviesOnClick}><BsChevronRight /></button>}
+      </IconContext.Provider>
+     </div>
     </div>
-   </div>
-   <div className={styles.movies__list}>
-    {pagedMovies[loadMoreCounter] && pagedMovies[loadMoreCounter].map(movie => {
-     return (
-      <MovieListItem key={movie.id} movie={movie} />
-     )
-    })}
-   </div>
-  </section>
+    <div className={styles.movies__list}>
+     {pagedMovies[loadMoreCounter] && pagedMovies[loadMoreCounter].map(movie => {
+      return (
+       <MovieListItem key={movie.id} movie={movie} />
+      )
+     })}
+    </div>
+   </section>}
+  </>
  )
 }

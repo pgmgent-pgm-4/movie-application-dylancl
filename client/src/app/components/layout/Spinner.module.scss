@@ -1,0 +1,54 @@
+.spinner {
+	height: 3rem;
+	width: 100%;
+	margin: 0;
+
+	background-color: transparent;
+	display: -webkit-flex;
+	display: flex;
+
+	&:before {
+		height: 3rem;
+		width: 100%;
+		margin: 0;
+
+		background-color: var(--main-color);
+		content: '';
+		-webkit-animation: loader-indefinite 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+		animation: loader-indefinite 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+	}
+}
+
+@-webkit-keyframes loader-indefinite {
+	0% {
+		margin-left: 0px;
+		margin-right: 100%;
+	}
+
+	50% {
+		margin-left: 25%;
+		margin-right: 0%;
+	}
+
+	100% {
+		margin-left: 100%;
+		margin-right: 0;
+	}
+}
+
+@keyframes loader-indefinite {
+	0% {
+		margin-left: 0px;
+		margin-right: 100%;
+	}
+
+	50% {
+		margin-left: 25%;
+		margin-right: 0%;
+	}
+
+	100% {
+		margin-left: 100%;
+		margin-right: 0;
+	}
+}

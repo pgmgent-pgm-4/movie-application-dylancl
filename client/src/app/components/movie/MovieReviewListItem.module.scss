@@ -1,0 +1,26 @@
+.review {
+ background-color: var(--background-color-trailer);
+ padding: 1rem;
+ color: var(--text-color);
+ min-width: 40rem;
+ margin-right: 1rem;
+
+ .title__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+   font-size: 1.3rem;
+   font-weight: 600;
+   max-width: 50%;
+  }
+
+  .stars {
+  }
+ }
+
+ &__content {
+  margin-top: 2rem;
+ }
+}

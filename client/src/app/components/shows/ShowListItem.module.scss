@@ -62,7 +62,7 @@
         padding: 0 0 0 0.3rem;
         li {
             display: inline;
-            color: #A4A4A4;
+            color: var(--darken-color);
             font-size: 0.9rem;
             text-transform: uppercase;
             &:after {

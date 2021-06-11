@@ -41,15 +41,12 @@ export const MovieDetails = ({ movie }) => {
  const handleCastOnClick = () => {
   setLoadMoreCounter(prev => {
    if (prev === pagedCast.length - 1) {
-    console.log(prev);
     return 0;
    } else {
     return prev + 1;
    }
   });
  };
-
- console.log(cast);
 
  return (
   <>

@@ -9,10 +9,12 @@ import styles from './MovieListItem.module.scss';
 
 const MovieListItem = ({ movie }) => {
  const [genres, setGenres] = useState();
+ const [isLoading, setIsLoading] = useState(true);
 
  const fetchData = useCallback(async () => {
   const response = await API.getGenreList('movie');
   setGenres(response.genres);
+  setIsLoading(false)
  }, []);
 
  useEffect(() => {

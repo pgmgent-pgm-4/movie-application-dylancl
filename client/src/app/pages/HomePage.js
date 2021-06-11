@@ -12,11 +12,11 @@ const HomePage = () => {
       <Hero />
       <Container>
         <h2 className={styles.title}>Popular movies and TV shows</h2>
-        <MovieList query='popular' />
+        <MovieList query='movie/popular' />
         <ShowList  query='popular' />
         <TrailerList />
         <h2 className={styles.title}>Trending movies and TV shows</h2>
-        <MovieList query='trending' />
+        <MovieList query='trending/movie/week' />
         <ShowList  query='trending' />
       </Container>
     </BaseLayout>

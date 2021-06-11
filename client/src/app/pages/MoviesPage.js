@@ -5,19 +5,19 @@ import { useEffect, useState } from "react";
 import Select from 'react-select';
 import Pagination from 'rc-pagination';
 import '../components/general/Pagination.css'
-
 import styles from './MoviesPage.module.scss'
 
 const MoviesPage = () => {
  const [movies, setMovies] = useState();
+ const [isLoading, setIsLoading] = useState(true);
  const [page, setPage] = useState(1);
  const [sort, setSort] = useState('popular');
 
  useEffect(() => {
   const fetchData = async () => {
-   console.log(page);
    const data = await API.getList('movie', sort, page);
    setMovies(data);
+   setIsLoading(false);
   };
 
   fetchData();
@@ -57,22 +57,25 @@ const MoviesPage = () => {
  }
 
  return (
-  <BaseLayout>
-   <Container>
-    <div className={styles.title__wrapper}>
-     <h1 className={styles.title}>Movies</h1>
-     <Select styles={selectStyles} classNamePrefix={'dropdown'} className={styles.dropdown} onChange={handleSortChange} value={options.value} defaultValue={options[0]} options={options} />
-    </div>
-    {movies && <MovieFeed movies={movies}></MovieFeed>}
-    <div className={styles.pagination__wrapper}>
-     <Pagination
-      onChange={handlePageChange}
-      current={page}
-      total={10000 / 20}
-     />
-    </div>
-   </Container>
-  </BaseLayout>
+  <>
+   {isLoading ? 'loading' : 
+   <BaseLayout>
+    <Container>
+     <div className={styles.title__wrapper}>
+      <h1 className={styles.title}>Movies</h1>
+      <Select styles={selectStyles} classNamePrefix={'dropdown'} className={styles.dropdown} onChange={handleSortChange} value={options.value} defaultValue={options[0]} options={options} />
+     </div>
+     {movies && <MovieFeed movies={movies}></MovieFeed>}
+     <div className={styles.pagination__wrapper}>
+      <Pagination
+       onChange={handlePageChange}
+       current={page}
+       total={10000 / 20}
+      />
+     </div>
+    </Container>
+   </BaseLayout>}
+  </>
  )
 }
 

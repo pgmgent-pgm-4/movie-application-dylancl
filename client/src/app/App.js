@@ -17,9 +17,8 @@ function App() {
     <FirebaseProvider>
      <AuthProvider>
       <FirestoreProvider>
-       <Router basename={'/movie-collection'}>
+       <Router>
         <Switch>
-         <Route exact path={Routes.LANDING} component={HomePage} />
          <Route exact path={Routes.HOME} component={HomePage} />
          <Route exact path={Routes.MOVIES} component={MoviesPage} />
          <Route exact path={Routes.MOVIE_DETAILS} component={MoviePage} />
