@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import MovieListItem from './MovieListItem';
 import styles from './MovieList.module.scss';
 import { IconContext } from 'react-icons';

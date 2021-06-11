@@ -1,0 +1,24 @@
+.result {
+ background-color: var(--background-color-sec);
+ margin-top: -1.5rem;
+ padding-top: 1.5rem;
+ position: absolute;
+ border-top-left-radius: 0.5rem;
+ border-top-right-radius: 0.5rem;
+ height: 50vh;
+ width: 17rem;
+ box-shadow: var(--box-shadow);
+
+ a {
+  text-decoration: none;
+  color: var(--text-color);
+ }
+
+ &__item {
+  padding: 2rem;
+
+  &_type {
+   color: #A4A4A4;
+  }
+ }
+}

@@ -1,8 +1,15 @@
+@import "../../../scss/mixins/mediaqueries";
+
+
 .MovieFeed {
  display: flex;
  flex-wrap: wrap;
  justify-content: space-between;
  margin-bottom: 2rem;
+ 
+ @include lt-md {
+  justify-content: space-evenly;
+ }
 
  a {
   text-decoration: none;
