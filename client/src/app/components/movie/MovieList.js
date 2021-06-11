@@ -12,7 +12,6 @@ export const MovieList = ({query}) => {
 	const [loadMoreCounter, setLoadMoreCounter] = useState(0);
 
  const [movies, error, isLoading] = useFetch(query);
- 
 
  useEffect(() => {
   const makeMovieArray = () => {

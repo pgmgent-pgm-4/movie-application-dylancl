@@ -1,20 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useCallback } from 'react';
 import API from '../../services/dataService';
-
 import * as Routes from '../../routes';
-
 import styles from './MovieListItem.module.scss';
 
 
 const MovieListItem = ({ movie }) => {
  const [genres, setGenres] = useState();
- const [isLoading, setIsLoading] = useState(true);
 
  const fetchData = useCallback(async () => {
   const response = await API.getGenreList('movie');
   setGenres(response.genres);
-  setIsLoading(false)
  }, []);
 
  useEffect(() => {

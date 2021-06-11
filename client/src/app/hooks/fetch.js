@@ -8,8 +8,10 @@ const useFetch = (query, page = 1) => {
  useEffect(() => {
   const getData = async () => { // expects something like movie/popular
    try {
-    const response = await axios.get(`https://api.themoviedb.org/3/${query}/?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=${page}`);
+    const response = await axios.get(`https://api.themoviedb.org/3/${query}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=${page}`);
     const results = response.data;
+    console.log(`https://api.themoviedb.org/3/${query}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=${page}`);
+    console.log(results)
     setData(results.results);
    } catch (err) {
     setError(err)
