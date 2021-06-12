@@ -5,14 +5,14 @@ import { useState } from "react";
 import Select from 'react-select';
 import Pagination from 'rc-pagination';
 import '../components/general/Pagination.css'
-import styles from './MoviesPage.module.scss'
+import styles from './ShowsPage.module.scss'
 import { Spinner } from '../components/layout/Spinner';
 
-const MoviesPage = () => {
+const ShowsPage = () => {
  const [page, setPage] = useState(1);
  const [sort, setSort] = useState('popular');
 
- const [movies, error, isLoading] = useFetch(`movie/${sort}`, true, false, page);
+ const [shows, error, isLoading] = useFetch(`tv/${sort}`, true, false, page);
 
  const options = [
   { value: 'popular', label: 'Popular' },
@@ -50,14 +50,14 @@ const MoviesPage = () => {
  return (
   <>
    {error ? error :
-    isLoading || !movies ? <Spinner /> :
+    isLoading || !shows ? <Spinner /> :
    <BaseLayout>
     <Container>
      <div className={styles.title__wrapper}>
-      <h1 className={styles.title}>Movies</h1>
+      <h1 className={styles.title}>Shows</h1>
       <Select styles={selectStyles} classNamePrefix={'dropdown'} className={styles.dropdown} onChange={handleSortChange} value={options.value} defaultValue={options[0]} options={options} />
      </div>
-     {movies && <ResultFeed results={movies} type="movie"></ResultFeed>}
+     {shows && <ResultFeed results={shows} type='show'></ResultFeed>}
      <div className={styles.pagination__wrapper}>
       <Pagination
        onChange={handlePageChange}
@@ -71,4 +71,4 @@ const MoviesPage = () => {
  )
 }
 
-export default MoviesPage
+export default ShowsPage;

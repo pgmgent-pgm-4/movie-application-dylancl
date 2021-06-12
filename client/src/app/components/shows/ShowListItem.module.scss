@@ -1,9 +1,14 @@
-@import '../../../scss/mixins/mediaqueries';
+@import "../../../scss/mixins/mediaqueries";
 
 .showListItem {
  overflow: hidden;
  color: var(--text-color);
  flex: 1 0 0;
+ transition: all 0.2s ease-in-out;
+
+ &:hover {
+  transform: scale(1.05);
+ }
 
  a {
   text-decoration: none;
