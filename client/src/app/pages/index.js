@@ -5,6 +5,7 @@ import MoviePage from './MoviePage';
 import MoviesPage from './MoviesPage';
 import SearchPage from './SearchPage';
 import ShowsPage from './ShowsPage';
+import ShowPage from './ShowPage';
 
 export {
   HomePage,
@@ -14,4 +15,5 @@ export {
   MoviesPage,
   SearchPage,
   ShowsPage,
+  ShowPage,
 };

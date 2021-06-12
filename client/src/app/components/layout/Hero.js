@@ -29,7 +29,7 @@ const Hero = () => {
      </div>
      <p className={styles.description}>{movie.overview}</p>
      <div className={styles.buttonContainer}>
-      <Button type="primary" content="Learn more" />
+      <Button type="primary" content="Learn more" endpoint={`movies/${movie.id}`} />
      </div>
     </div>
    </section>

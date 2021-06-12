@@ -57,7 +57,7 @@ const MoviesPage = () => {
       <h1 className={styles.title}>Movies</h1>
       <Select styles={selectStyles} classNamePrefix={'dropdown'} className={styles.dropdown} onChange={handleSortChange} value={options.value} defaultValue={options[0]} options={options} />
      </div>
-     {movies && <ResultFeed results={movies}></ResultFeed>}
+     {movies && <ResultFeed results={movies} type="movie"></ResultFeed>}
      <div className={styles.pagination__wrapper}>
       <Pagination
        onChange={handlePageChange}

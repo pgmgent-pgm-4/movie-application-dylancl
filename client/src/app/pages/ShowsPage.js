@@ -57,7 +57,7 @@ const ShowsPage = () => {
       <h1 className={styles.title}>Shows</h1>
       <Select styles={selectStyles} classNamePrefix={'dropdown'} className={styles.dropdown} onChange={handleSortChange} value={options.value} defaultValue={options[0]} options={options} />
      </div>
-     {shows && <ResultFeed results={shows}></ResultFeed>}
+     {shows && <ResultFeed results={shows} type='show'></ResultFeed>}
      <div className={styles.pagination__wrapper}>
       <Pagination
        onChange={handlePageChange}
