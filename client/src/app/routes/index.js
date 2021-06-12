@@ -1,7 +1,8 @@
 export const HOME = '/'
-export const SHOWS = '/shows';
+export const SHOWS = 'shows';
 export const SHOW_DETAILS = '/shows/:id';
 export const MOVIES = '/movies';
+export const SEARCH_PAGE = '/search/:query'
 export const MOVIE_DETAILS = '/movies/:id';
 export const PROFILE = '/profile';
 export const WATCHLIST = '/profile/watchlist';

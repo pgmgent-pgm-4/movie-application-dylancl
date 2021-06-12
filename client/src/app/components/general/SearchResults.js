@@ -10,9 +10,9 @@ export const SearchResults = ({ results }) => {
    <SimpleBar style={{ height: '50vh'}}>
     {results && results.map((result) => {
      return (
-      <Link to={Routes.MOVIE_DETAILS.replace(':id', result.id)}><li className={styles.result__item} key={result.id}>{result.name ? result.name : result.title} <span className={styles.result__item_type}>({result.media_type})</span></li></Link>)
+      <Link key={result.id} to={Routes.MOVIE_DETAILS.replace(':id', result.id)}><li className={styles.result__item}>{result.name ? result.name : result.title} <span className={styles.result__item_type}>({result.media_type})</span></li></Link>)
     })}
-   </SimpleBar>
+   </SimpleBar> 
   </ul>
  )
 }
