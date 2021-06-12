@@ -2,7 +2,6 @@ import styles from './ResultDetails.module.scss';
 import { Button } from '../button/Button';
 
 export const ResultDetails = ({ result }) => {
- console.log(result);
  return (
   <>
    <section style={{ backgroundImage: `url("https://image.tmdb.org/t/p/original${result.backdrop_path}"` }} className={styles.hero}>

@@ -5,7 +5,7 @@ import * as Routes from '../../routes';
 import styles from './MovieListItem.module.scss';
 
 
-const MovieListItem = ({ movie }) => {
+export const MovieListItem = ({ movie }) => {
  const [genres, setGenres] = useState();
 
  const fetchData = useCallback(async () => {
@@ -35,5 +35,3 @@ const MovieListItem = ({ movie }) => {
   </article>
  )
 };
-
-export default MovieListItem;

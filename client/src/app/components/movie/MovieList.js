@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import MovieListItem from './MovieListItem';
+import { MovieListItem } from './MovieListItem';
 import styles from './MovieList.module.scss';
 import { IconContext } from 'react-icons';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
@@ -52,7 +52,7 @@ export const MovieList = ({ query, isList }) => {
         </IconContext.Provider>
        </div>
       </div>
-      <div className={styles.movies__list}>
+      <div data-testid="movieListTest" className={styles.movies__list}>
        {pagedMovies[loadMoreCounter] && pagedMovies[loadMoreCounter].map(movie => {
         return (
          <MovieListItem key={movie.id} movie={movie} />
