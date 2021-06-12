@@ -7,9 +7,7 @@ import { CastListItem } from './CastListItem';
 export const CastList = ({ castList }) => {
  const [pagedCast, setPagedCast] = useState([]);
  const [loadMoreCounter, setLoadMoreCounter] = useState(0);
-
- console.log(castList)
-
+ 
  useEffect(() => {
   const makeCastArray = () => {
    if (castList) {

@@ -2,55 +2,27 @@ import useFetch from '../hooks/fetch';
 import { BaseLayout, Container } from '../layouts';
 import { SearchFeed } from '../components/search/SearchFeed';
 import { useState } from "react";
-// import Select from 'react-select';
 import Pagination from 'rc-pagination';
 import '../components/general/Pagination.css'
 import styles from './MoviesPage.module.scss'
 import { Spinner } from '../components/layout/Spinner';
 import { useParams } from 'react-router';
+import { Helmet } from 'react-helmet';
 
 const SearchPage = () => {
  const { query } = useParams();
  const [page, setPage] = useState(1);
- // const [sort, setSort] = useState('popular');
 
  const [results, error, isLoading] = useFetch(`${query}`, true, true, page);
-
- // const options = [
- //  { value: 'popular', label: 'Popular' },
- //  { value: 'upcoming', label: 'Upcoming' },
- //  { value: 'top_rated', label: 'Top rated' },
- //  { value: 'now_playing', label: 'Now playing' }
- // ]
-
- // const handleSortChange = (event) => {
- //  setSort(event.value);
- //  setPage(1);
- // }
 
  const handlePageChange = (selectedPage) => {
   setPage(selectedPage)
  }
 
- // const selectStyles = {
- //  option: (styles, { isFocused, isSelected }) => {
- //   const color = '#6703ff';
- //   return {
- //    ...styles,
- //    backgroundColor: isSelected
- //     ? color
- //     : isFocused
- //      ? 'rgb(103 3 255 / 50%)'
- //      : null,
- //    color: isSelected
- //     ? 'white'
- //     : 'black',
- //   };
- //  },
- // }
-
  return (
   <>
+    <Helmet htmlAttributes title={`Search - ${query}`} description={'Movie Collection is a site that shows you the latest series and movies, with all the information you could ever need.'}/>
+
    {error ? error :
     isLoading || !results ? <Spinner /> :
    <BaseLayout>

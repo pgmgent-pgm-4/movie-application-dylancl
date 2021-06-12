@@ -5,6 +5,7 @@ import { BaseLayout, Container } from '../layouts';
 import { Spinner } from "../components/layout/Spinner";
 import { ResultReviewList } from '../components/general/ResultReviewList';
 import { CastList } from "../components/general/CastList";
+import { Helmet } from "react-helmet";
 
 const MoviePage = () => {
  const { id } = useParams();
@@ -14,6 +15,7 @@ const MoviePage = () => {
 
  return (
   <>
+  <Helmet htmlAttributes title={movie && movie.title} description={'Movie Collection is a site that shows you the latest series and movies, with all the information you could ever need.'}/>
    {error ? error :
     isLoading || !movie ? <Spinner /> :
       <BaseLayout>

@@ -1,28 +1,28 @@
 @import "../../../scss/mixins/mediaqueries";
 
 .hero {
- height: 50vh;
+ height: fit-content;
  background: var(--main-color);
  background-position: 0% 0%;
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
  display: flex;
- padding-top: 5rem;
+ padding-top: 3rem;
 
  @include lt-lg {
-  padding-top: 7rem;
+  padding-top: 4rem;
  }
 
  .content {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 40%;
-  padding: 0 2rem 0 2rem;
+  padding: 3rem 2rem 3rem 2rem;
   margin-left: auto;
   height: 100%;
-  padding-top: 30rem;
   color: white;
   align-self: flex-end;
   background-color: rgba(0, 0, 0, 0.63);
@@ -34,6 +34,8 @@
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
+   text-align: center;
+   padding: 3rem 2rem 3rem 2rem;
   }
 
   .title {

@@ -7,6 +7,7 @@ import Pagination from 'rc-pagination';
 import '../components/general/Pagination.css'
 import styles from './MoviesPage.module.scss'
 import { Spinner } from '../components/layout/Spinner';
+import { Helmet } from 'react-helmet';
 
 const MoviesPage = () => {
  const [page, setPage] = useState(1);
@@ -49,6 +50,8 @@ const MoviesPage = () => {
 
  return (
   <>
+    <Helmet htmlAttributes title={'Movies'} description={'Movie Collection is a site that shows you the latest series and movies, with all the information you could ever need.'}/>
+
    {error ? error :
     isLoading || !movies ? <Spinner /> :
    <BaseLayout>
