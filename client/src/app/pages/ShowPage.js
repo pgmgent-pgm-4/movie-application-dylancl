@@ -4,6 +4,7 @@ import useFetch from "../hooks/fetch";
 import { BaseLayout, Container } from '../layouts';
 import { Spinner } from "../components/layout/Spinner";
 import { CastList } from "../components/general/CastList";
+import { ResultReviewList } from "../components/general/ResultReviewList";
 
 const ShowPage = () => {
  const { id } = useParams();
@@ -19,7 +20,7 @@ const ShowPage = () => {
        <Container>
        {show && <ResultDetails result={show} /> }
        {castList && <CastList castList={castList} /> }
-       {/* {show && <ShowReviewList movieId={id} /> } */}
+       {show && <ResultReviewList resultId={id} type='shows' /> }
        </Container>
      </BaseLayout>}
   </>

@@ -1,14 +1,14 @@
 
-import styles from './MovieReviewListItem.module.scss';
+import styles from './ResultReviewListItem.module.scss';
 import StarRatings from 'react-star-ratings';
 
 
-export const MovieReviewListItem = ({ movieReview }) => {
- const rating = movieReview.rating;
+export const ResultReviewListItem = ({ result }) => {
+ const rating = result.rating;
  return (
   <article className={styles.review}>
    <div className={styles.title__wrapper}>
-    <h3 className={styles.title}>{movieReview.title}</h3>
+    <h3 className={styles.title}>{result.title}</h3>
     <div className={styles.stars}><StarRatings
      rating={rating}
      starRatedColor={'var(--main-color)'}
@@ -17,7 +17,7 @@ export const MovieReviewListItem = ({ movieReview }) => {
     /></div>
    </div>
    <p className={styles.review__content}>
-    {movieReview.review}
+    {result.review}
    </p>
   </article>
  )
