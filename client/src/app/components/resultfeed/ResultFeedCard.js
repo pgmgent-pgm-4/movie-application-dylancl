@@ -6,7 +6,6 @@ import 'react-circular-progressbar/dist/styles.css';
 import '../general/CircularProgressBar.css'
 
 export const ResultFeedCard = ({ result, type }) => {
- console.log(type);
  const percentage = result.vote_average * 10;
 
  if (result.media_type !== 'person') {

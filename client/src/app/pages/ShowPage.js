@@ -3,7 +3,6 @@ import { ResultDetails } from "../components/general/ResultDetails";
 import useFetch from "../hooks/fetch";
 import { BaseLayout, Container } from '../layouts';
 import { Spinner } from "../components/layout/Spinner";
-import { ShowReviewList } from '../components/shows/ShowReviewList';
 import { CastList } from "../components/general/CastList";
 
 const ShowPage = () => {
