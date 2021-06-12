@@ -12,9 +12,19 @@
 }
 
 .primary {
+ font-size: 1.2rem;
+ padding: 0.7rem 1rem 0.7rem 1rem;
+ border-radius: 5rem;
+ margin-right: 2rem;
+ border: 3px solid var(--main-color);
  background-color: var(--main-color);
 }
 
 .secondary {
  background-color: transparent;
+ font-size: 1.2rem;
+ padding: 0.7rem 1rem 0.7rem 1rem;
+ border-radius: 5rem;
+ margin-right: 2rem;
+ border: 3px solid var(--main-color);
 }

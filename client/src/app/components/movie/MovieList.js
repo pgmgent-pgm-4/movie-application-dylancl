@@ -30,7 +30,6 @@ export const MovieList = ({ query, isList }) => {
  const handleMoviesOnClick = () => {
   setLoadMoreCounter(prev => {
    if (prev === pagedMovies.length - 1) {
-    console.log(prev);
     return 0;
    } else {
     return prev + 1;
