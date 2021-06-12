@@ -1,34 +1,34 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from "../../contexts/firebase/firestore.context";
-import { MovieReviewListItem } from './MovieReviewListItem';
-import styles from './MovieReviewList.module.scss';
+import { ResultReviewListItem } from './ResultReviewListItem';
+import styles from './ResultReviewList.module.scss';
 import 'simplebar/dist/simplebar.min.css';
 import '../general/SimpleBar.css'
 import SimpleBar from 'simplebar-react';
 
 
-export const MovieReviewList = ({ movieId }) => {
- const [movieReviews, setMovieReviews] = useState();
- const { getMovieReviews } = useFirestore();
+export const ResultReviewList = ({ resultId, type }) => {
+ const [resultReviews, setResultReviews] = useState();
+ const { getResultReviews } = useFirestore();
 
  useEffect(() => {
   const fetchData = async () => {
-   const data = await getMovieReviews(movieId);
-   setMovieReviews(data);
+   const data = await getResultReviews(resultId, type);
+   setResultReviews(data);
   };
 
   fetchData();
- }, [getMovieReviews, movieId])
+ }, [getResultReviews, resultId, type])
 
- if (movieReviews && movieReviews.length) {
+ if (resultReviews && resultReviews.length) {
   return (
    <section className={styles.reviews}>
     <h1 className={styles.reviews__title}>Reviews</h1>
     <SimpleBar className={styles.test} style={{ height: '21rem' }}>
      <div className={styles.reviews__list}>
-      {movieReviews && movieReviews.map(movieReview => {
+      {resultReviews && resultReviews.map(result => {
        return (
-        <MovieReviewListItem key={movieReview.uid} movieReview={movieReview} />
+        <ResultReviewListItem key={result.uid} result={result} />
        )
       })}
      </div>

@@ -3,7 +3,7 @@ import { ResultDetails } from "../components/general/ResultDetails";
 import useFetch from "../hooks/fetch";
 import { BaseLayout, Container } from '../layouts';
 import { Spinner } from "../components/layout/Spinner";
-import { MovieReviewList } from '../components/movie/MovieReviewList';
+import { ResultReviewList } from '../components/general/ResultReviewList';
 import { CastList } from "../components/general/CastList";
 
 const MoviePage = () => {
@@ -20,7 +20,7 @@ const MoviePage = () => {
        <Container>
        {movie && <ResultDetails result={movie} /> }
        {castList && <CastList castList={castList} /> }
-       {movie && <MovieReviewList movieId={id} /> }
+       {movie && <ResultReviewList resultId={id} type='movie' /> }
        </Container>
      </BaseLayout>}
   </>

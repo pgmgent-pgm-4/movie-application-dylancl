@@ -7,6 +7,7 @@
     "dependencies": {
         "@babel/cli": "^7.14.3",
         "babel-node": "0.0.1-security",
+        "dotenv": "^10.0.0",
         "faker": "^4.1.0",
         "firebase": "^7.24.0",
         "firebase-admin": "^8.13.0",
@@ -21,6 +22,8 @@
     },
     "scripts": {
         "seeder:movies": "babel-node movies-seeder.js --debug --presets airbnb",
+        "seeder:shows": "babel-node shows-seeder.js --debug --presets airbnb",
+        "seeder:show-reviews": "babel-node show-reviews-seeder.js --debug --presets airbnb",
         "seeder:movie-reviews": "babel-node movie-reviews-seeder.js --debug --presets airbnb",
         "seeder:project-views": "babel-node project-views-seeder.js --debug --presets airbnb",
         "seeder:users": "babel-node users-seeder.js --debug --presets airbnb",

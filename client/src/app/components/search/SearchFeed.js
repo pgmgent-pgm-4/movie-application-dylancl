@@ -6,7 +6,7 @@ export const SearchFeed = ({ results }) => {
   <section className={styles.ResultFeed}>
    {results && results.map(result => {
     return (
-    <ResultFeedCard key={result.id} result={result}></ResultFeedCard>
+    <ResultFeedCard key={result.id} result={result} type={result.media_type}></ResultFeedCard>
     )
    })}
   </section>
