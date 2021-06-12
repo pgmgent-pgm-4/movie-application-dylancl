@@ -59,34 +59,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   }
 
-   .buttonLearn {
-    font-size: 1.2rem;
-    padding: 0.7rem 1rem 0.7rem 1rem;
-    border-radius: 5rem;
-    background-color: var(--main-color);
-    margin-right: 2rem;
-    border: 3px solid var(--main-color);
-
-    @include lt-lg {
-     margin-right: 0;
+    button {
      margin-bottom: 1rem;
-    }
-
-    &:hover {
-     background-color: transparent;
-    }
-   }
-
-   .buttonTrailer {
-    font-size: 1.2rem;
-    padding: 0.7rem 1rem 0.7rem 1rem;
-    border: 3px solid var(--main-color);
-    border-radius: 5rem;
-
-    &:hover {
-     background-color: var(--main-color);
     }
    }
   }

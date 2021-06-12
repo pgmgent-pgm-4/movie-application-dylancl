@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 import ThemeToggler from './ThemeToggler';
 import * as Routes from '../../routes';
-import { BsHouseFill, BsTvFill, BsPersonSquare, BsHeartFill } from "react-icons/bs";
+import { BsHouseFill, BsTvFill } from "react-icons/bs";
 import { MdMovie } from "react-icons/md";
 import { useAuth } from '../../contexts/firebase/auth.context';
 import styles from './MainNavigation.module.scss';
@@ -26,26 +26,9 @@ const MainNavigation = () => {
      <li className={styles.showsIcon}>
       <NavLink activeStyle={{ color: '#6703ff' }} to={Routes.SHOWS}><BsTvFill /></NavLink>
      </li>
-     <li className={styles.personIcon}>
-      <NavLink activeStyle={{ color: '#6703ff' }} to={Routes.SHOWS}><BsPersonSquare /></NavLink>
-     </li>
-     <li>
-      <NavLink activeStyle={{ color: '#6703ff' }} to={Routes.SHOWS}><BsHeartFill /></NavLink>
-     </li>
     </ul>
    </nav>
    <div className={styles.mainNavigation__header}>
-    {/* <form action="/" method="get">
-     <label htmlFor="header-search">
-      <span className="visually-hidden">Search movies, series, tags, ...</span>
-     </label>
-     <input
-      type="text"
-      className={styles.mainNavigation__header_search}
-      placeholder="Search movies, series, tags, ..."
-      name="search"
-     />
-    </form> */}
     <Search />
     <div className={styles.mainNavigation__header_login}>
      <ThemeToggler />

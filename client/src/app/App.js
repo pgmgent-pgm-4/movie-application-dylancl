@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import * as Routes from './routes';
 import styles from './App.module.scss';
-import { HomePage, SignInPage, MoviePage, MoviesPage, SearchPage } from './pages';
+import { HomePage, SignInPage, MoviePage, MoviesPage, SearchPage, ShowsPage } from './pages';
 import { ThemeContext } from './lib/context'
 
 function App() {
@@ -21,8 +21,9 @@ function App() {
         <Switch>
          <Route exact path={Routes.HOME} component={HomePage} />
          <Route exact path={Routes.MOVIES} component={MoviesPage} />
-         <Route exact path={Routes.SEARCH_PAGE} component={SearchPage} />
+         <Route exact path={Routes.SHOWS} component={ShowsPage} />
          <Route exact path={Routes.MOVIE_DETAILS} component={MoviePage} />
+         <Route exact path={Routes.SEARCH_PAGE} component={SearchPage} />
          <Route exact path={Routes.AUTH_SIGN_IN} component={SignInPage} />
         </Switch>
        </Router>

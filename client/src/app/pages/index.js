@@ -3,7 +3,8 @@ import NotFoundPage from './NotFoundPage';
 import SignInPage from './SignInPage';
 import MoviePage from './MoviePage';
 import MoviesPage from './MoviesPage';
-import SearchPage from './SearchPage'
+import SearchPage from './SearchPage';
+import ShowsPage from './ShowsPage';
 
 export {
   HomePage,
@@ -12,4 +13,5 @@ export {
   MoviePage,
   MoviesPage,
   SearchPage,
+  ShowsPage,
 };
