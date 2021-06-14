@@ -1,17 +1,73 @@
-.fullContainer {
-    height: 100vh;
-    width: 100vw;
+.NotFound {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+
+
+ &__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+ }
+
+ &__logo {
+  margin-bottom: 4rem;
+  font-size: 3rem;
+  color: var(--main-color);
+  font-weight: 700;
+  text-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+ }
+
+ button {
+  margin-right: 0;
+ }
+
+ &__cta {
+  width: 30vw;
+  padding: 2rem;
+  background-color: rgba(24, 24, 24, 0.829);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  color: white;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_group {
+   display: flex;
+   flex-direction: column;
+  }
+ }
+ .input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.5rem 0 1rem 0;
+  padding: 1rem;
+  background-color: white;
+  border: 0;
+ }
 }
 
-.fof {
-    height: 100%;
-    width: 100%;
+.button {
+ background-color: var(--main-color);
+ padding: 1rem;
+ width: 100%;
+ margin: 1rem 0 1rem 0;
+ text-transform: uppercase;
+ 
+ &:hover {
+  background-color: #4900b8;
+ }
+}
 
-    background: #fff;
-    background-size: cover;
-    & .callToActions {
-        display: flex;
-        flex-direction: row;
-        display: block;
-    }
+.register {
+ margin-top: 0;
+ background-color: transparent;
+ border: 3px solid var(--main-color);
+
+ &:hover {
+  background-color: var(--main-color);
+ }
 }

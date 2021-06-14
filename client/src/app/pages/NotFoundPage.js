@@ -1,20 +1,15 @@
-import { useHistory } from "react-router-dom";
-
 import * as Routes from '../routes';
+import { Button } from "../components/button/Button";
 
 import styles from './NotFoundPage.module.scss';
 
 const NotFoundPage = () => {
-  const history = useHistory();
-
   return (
-    <main className={styles.fullContainer}>
-      <div className={styles.fof}>
-        <div className={styles.callToActions}>
-          <button onClick={() => history.push(Routes.HOME, { from: "NotFoundPage" })}>Home</button>
-          <button onClick={() => history.goBack() }>Back</button>
+    <main className={styles.NotFound}>
+        <div className={styles.NotFound__cta}>
+         <h3 className={styles.NotFound__title}>Page not found (404)</h3>
+          <Button content="Go back to home" type="primary" endpoint={Routes.HOME}/>
         </div>
-      </div>
     </main>
   );
 };
